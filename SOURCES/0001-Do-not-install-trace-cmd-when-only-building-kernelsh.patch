@@ -1,0 +1,26 @@
+From a0a28e0b5161203c7576a430ca12d11a16a88e74 Mon Sep 17 00:00:00 2001
+From: Zamir SUN <sztsian@gmail.com>
+Date: Thu, 24 Sep 2020 21:19:00 +0800
+Subject: [PATCH] Do not install trace-cmd when only building kernelshark
+
+Signed-off-by: Zamir SUN <sztsian@gmail.com>
+---
+ Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index bbdf15e..a489fe8 100644
+--- a/Makefile
++++ b/Makefile
+@@ -338,7 +338,7 @@ install: install_cmd
+ 	@echo "Note: to install the gui, type \"make install_gui\""
+ 	@echo "      to install man pages, type \"make install_doc\""
+ 
+-install_gui: install_cmd gui
++install_gui: gui
+ 	$(Q)$(MAKE) $(S) -C $(kshark-dir)/build install
+ 
+ install_libs: libs
+-- 
+2.26.2
+
